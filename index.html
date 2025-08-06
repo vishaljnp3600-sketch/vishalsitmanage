@@ -1,23 +1,45 @@
- <!DOCTYPE html>
- <html>
-    <head>
-      <main>Our doc</main>
-        <title> this is my first project</title>
-    </head>
-    <body>
-        <p>Hello this side vishal<pre>This is my computer</pre></p>
-        <a href="https://mail.google.com/mail/u/0/#inbox"></a>
-        
-        <img src="https://imgs.search.brave.com/6ZeXlJ6IZceZ60p6ybfjKGqYMDRd1jVw6tTGpAvgBq0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9pc29t/ZXRyaWMtZC1uYXR1/cmUtc2NlbmUtZ29s/ZGVuLWxvZ28tc3Bh/cmtsaW5nLWxpZ2h0/cy13aGl0ZS1iYWNr/Z3JvdW5kLXNob3dz/LXNtYWxsLXNsaWNl/LWxhbmQtdHJlZXMt/cm9ja3MtMzg3Nzky/MjEyLmpwZw" height="60px">
-        <img src="https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="40px"
-        <big>big</big>
-        <sub>h2o</sub>
-        <section>10%</section>
-         <aside>20%</aside>
-         <colgroup=
-            <source me
-            dia="(10)" srcset="5">
-            <img src="https://unsplash.com/photos/young-asian-travel-woman-is-enjoying-with-beautiful-place-in-bangkok-thailand-_Fqoswmdmoo"alt="random Image">>
-         </picture>
-    </body>
- </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Error Debug Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #errorBox {
+      background: #fdd;
+      color: #900;
+      padding: 10px;
+      border: 1px solid #900;
+      margin: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>System Debug Page</h1>
+  <div id="errorBox"></div>
+
+  <script>
+    window.onerror = function(message, source, lineno, colno, error) {
+      const errorBox = document.getElementById('errorBox');
+      errorBox.style.display = 'block';
+      errorBox.innerHTML = `
+        <strong>JavaScript Error:</strong><br>
+        Message: ${message} <br>
+        Source: ${source} <br>
+        Line: ${lineno}, Column: ${colno} <br>
+        Error object: ${error}
+      `;
+      return false; // Let the browser console also show the error
+    };
+
+    // Example of a code that will trigger an error
+    // Uncomment the following line to see the error handling in action:
+    // nonExistentFunction();
+  </script>
+
+</body>
+</html>
